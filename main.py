@@ -35,3 +35,7 @@ while disparando:
         print("Acertaste!")
     
     # verificar si el juego a terminado
+    # No se como, igual una funcion nueva
+
+    # cambiar al otro jugador
+    # igual con pum acierto o no acierto
