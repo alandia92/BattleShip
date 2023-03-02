@@ -71,7 +71,13 @@ tablero_barcos = colocar_barcos()
 print(tablero_barcos)
 
 #DISPARAR
-def disparar(tablero_adversario, fila, columna):
+# No se como gestionar tablero_adversario
+def disparar(tablero_adversario, fila, columna, es_maquina):
+
+    # generamos aleatoriamente los disparos de la maquina
+    if es_maquina:
+        fila = np.random.randint(0,9)
+        columna = np.random.randint(0,9)
 
     if tablero_adversario[fila, columna] == "O":
         # acierto, colocar una X
