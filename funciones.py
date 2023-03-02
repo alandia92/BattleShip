@@ -25,6 +25,11 @@ def colocar_barcos():
                 fila_inicial = np.random.choice(np.arange(10))
                 columna_inicial = np.random.choice(np.arange(10 - longitud + 1))
                 # verificar si el barco se solapa o es adyacente a otros barcos
+                # np.any comprueba si hay algun elemento en el rango tablero[] que no sea espacio en blanco
+                # si es true, si hay algun elemento que no es e blanco pasa a continue y omite cualquier codigo que sigue de el
+                # continue salta a la siguiente iteracion del bucle
+                # Cada if comprueba una cosa son independientes uno de otro
+                # Todas las comprobaciones se realizan si o si
                 if np.any(tablero[fila_inicial, columna_inicial:columna_inicial+longitud] != " "):
                     continue
                 if fila_inicial > 0:
