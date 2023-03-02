@@ -69,3 +69,7 @@ def colocar_barcos():
 
 tablero_barcos = colocar_barcos()
 print(tablero_barcos)
+
+#DISPARAR
+def disparar():
+    
