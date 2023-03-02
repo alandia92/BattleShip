@@ -28,7 +28,7 @@ while disparando:
         print(f"Has fallado! Te quedan {vidas} vidas")
         if vidas == 0:
             # Gestionar jugadores
-            print{f"El jugador {x} a perdido"}
+            print(f"El jugador {x} a perdido")
             disparando = False
             break
     else:
