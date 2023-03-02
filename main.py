@@ -6,6 +6,8 @@ from variables import*
 # Pero luego no se como hacer que vuelva a ser otra vez el jugador
 disparando = True
 jugador = 1
+vidas = 20
+# Con las vidas igual puedo hacer el cambio de turno
 while disparando:
     if jugador == 1:
         fila = int(input("Elije fila entre 0-9: "))
@@ -16,4 +18,20 @@ while disparando:
         columna = None
         es_maquina = True
 
+    # realizar disparo al tablero del adversaio
+    # Tengo que gestionar tablero del adversaro de alguna manera
+    pum = disparar(tablero_adversario, fila, columna, es_maquina)
+
+    # acertamos o no y se reduce las vidas
+    if not pum: 
+        vidas -=1
+        print(f"Has fallado! Te quedan {vidas} vidas")
+        if vidas == 0:
+            # Gestionar jugadores
+            print{f"El jugador {x} a perdido"}
+            disparando = False
+            break
+    else:
+        print("Acertaste!")
     
+    # verificar si el juego a terminado
