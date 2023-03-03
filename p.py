@@ -1,17 +1,9 @@
 import numpy as np
-
-#TABLERO
-# tamaño_tablero = 10
-# tablero = np.full((10,10), " ")
-
-def crear_tablero():
-    tablero = np.full((10,10), " ")
-    return tablero
-
-#COLOCAR BARCO
-def colocar_barcos(tablero):
+def colocar_barcos():
     # longitud de los barcos
     barcos = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1]
+
+    tablero = np.full((10,10), " ")
 
     # bucle para colocar cada barco
     for longitud in barcos:
@@ -73,25 +65,3 @@ def colocar_barcos(tablero):
 
 tablero_barcos = colocar_barcos() # esta variabl externa nos sirve para trabajarla
 print(tablero_barcos)
-
-#DISPARAR
-# No se como gestionar tablero_adversario
-def disparar(tablero_ataque, tablero_enemigo, fila, columna):
-
-
-    if tablero_enemigo[fila, columna] == "O":
-        # acierto, colocar una X
-        tablero_ataque[fila, columna] = "X"
-        tablero_enemigo[fila, columna] = "X"
-        # verificar si quedan barcos
-        disparando = True
-    else:
-        # fallo, colocar un punto
-        tablero_enemigo[fila, columna] = "."
-        tablero_ataque[fila, columna] = "."
-        # cambiar al otro jugador
-        disparando = False
-        
-    return  disparando
-
-#para que funcione disparar meterlo en una variable para que esa variable tenga return disparando
