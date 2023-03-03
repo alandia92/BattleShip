@@ -102,3 +102,4 @@ def disparar(tablero_adversario, fila, columna, es_maquina):
         
     return  disparando
 
+#para que funcione disparar meterlo en una variable para que esa variable tenga return disparando
