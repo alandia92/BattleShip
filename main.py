@@ -1,6 +1,5 @@
 import numpy as np
 from funciones import*
-from variables import*
 
 tablero_jugador = crear_tablero()
 tablero_maquina = crear_tablero()
@@ -12,6 +11,8 @@ tablero_ataque_maquina = crear_tablero()
 disparando = True
 partida_continua = True
 
+vidas_jugador = 20
+vidas_maquina = 20
 
 while partida_continua:
 
@@ -19,30 +20,23 @@ while partida_continua:
     print("Tu flota\n",tablero_jugador)
     print("-------------------------------------------------------------------")
     if disparando == True:
-        fila = int(input("Elije fila entre 0-9: "))
-        columna = int(input("Elije fila entre 0-9: "))
-        disparando = disparar(tablero_ataque_jugador,tablero_maquina,fila,columna)
-        
+        # fila = int(input("Elije fila entre 0-9: "))
+        # columna = int(input("Elije fila entre 0-9: "))
+        fila = np.random.randint(0,10)
+        columna = np.random.randint(0,10)
+        disparando = dispararJugador(tablero_ataque_jugador,tablero_maquina,fila,columna)
+        if disparando == True:
+            vidas_maquina -= 1
     else:
-        fila = np.random.randint(0,9)
-        columna = np.random.randint(0,9)
-        disparando = disparar(tablero_ataque_maquina,tablero_jugador,fila,columna)
-
-    # for i in range(len(tablero_jugador)):
-    #     if i == "O":
-    #         partida_continua = True
-    #         break
-    #     if i != "O":
-    #         partida_continua = False
-    # if partida_continua == False:
-    #     print("Has perdido!")
-
-    # for i in range(len(tablero_maquina)):
-    #     if i == "O":
-    #         partida_continua = True
-    #         break
-    #     if i != "O":
-    #         partida_continua = False
-
-    # if partida_continua == False:
-    #     print("Has ganado!")
+        fila = np.random.randint(0,10)
+        columna = np.random.randint(0,10)
+        disparando = dispararMaquina(tablero_ataque_maquina,tablero_jugador,fila,columna)
+        if disparando == False:
+            vidas_jugador -= 1
+    print(f"Te quedan {vidas_jugador} vidas y a tu contrincante {vidas_maquina} vidas")
+    if vidas_jugador == 0:
+        partida_continua = False
+        print("Has perdido!")
+    if vidas_maquina == 0:
+        partida_continua = False
+        print("Has ganado!")

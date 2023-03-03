@@ -1,5 +1,6 @@
 import numpy as np
 
+
 #TABLERO
 # tamaño_tablero = 10
 # tablero = np.full((10,10), " ")
@@ -74,21 +75,37 @@ def colocar_barcos(tablero):
 
 #DISPARAR
 # No se como gestionar tablero_adversario
-def disparar(tablero_ataque, tablero_enemigo, fila, columna):
-
-
+def dispararJugador(tablero_ataque, tablero_enemigo, fila, columna):
+    if tablero_enemigo[fila, columna] == "X" or tablero_enemigo[fila, columna] == "_":
+        print("Has disparado al mismo sitio, tonto!, vuelve a intentarlo!")
+        disparando = True
     if tablero_enemigo[fila, columna] == "O":
         # acierto, colocar una X
         tablero_ataque[fila, columna] = "X"
         tablero_enemigo[fila, columna] = "X"
         disparando = True
-    else:
+    if tablero_enemigo[fila, columna] == " ":
         # fallo, colocar un punto
         tablero_enemigo[fila, columna] = "_"
         tablero_ataque[fila, columna] = "_"
         # cambiar al otro jugador
         disparando = False
-        
+    return  disparando
+
+def dispararMaquina(tablero_ataque, tablero_enemigo, fila, columna):
+    if tablero_enemigo[fila, columna] == "X" or tablero_enemigo[fila, columna] == "_":
+        disparando = False
+    if tablero_enemigo[fila, columna] == "O":
+        # acierto, colocar una X
+        tablero_ataque[fila, columna] = "X"
+        tablero_enemigo[fila, columna] = "X"
+        disparando = False #ataca cuando es false
+    if tablero_enemigo[fila, columna] == " ":
+        # fallo, colocar un punto
+        tablero_enemigo[fila, columna] = "_"
+        tablero_ataque[fila, columna] = "_"
+        # cambiar al otro jugador
+        disparando = True
     return  disparando
 
 #para que funcione disparar meterlo en una variable para que esa variable tenga return disparando
