@@ -15,8 +15,9 @@ partida_continua = True
 
 while partida_continua:
 
-    print(tablero_ataque_jugador)
-
+    print("Campo de batalla\n",tablero_ataque_jugador)
+    print("Tu flota\n",tablero_jugador)
+    print("-------------------------------------------------------------------")
     if disparando == True:
         fila = int(input("Elije fila entre 0-9: "))
         columna = int(input("Elije fila entre 0-9: "))
@@ -27,10 +28,21 @@ while partida_continua:
         columna = np.random.randint(0,9)
         disparando = disparar(tablero_ataque_maquina,tablero_jugador,fila,columna)
 
-    if np.any(tablero_jugador != "O" | tablero_maquina != "O"):
-            partida_continua = False
+    # for i in range(len(tablero_jugador)):
+    #     if i == "O":
+    #         partida_continua = True
+    #         break
+    #     if i != "O":
+    #         partida_continua = False
+    # if partida_continua == False:
+    #     print("Has perdido!")
 
-if np.any(tablero_jugador != "O"):
-    print("Has perdido!")
-else:
-     print("Has ganado!")
+    # for i in range(len(tablero_maquina)):
+    #     if i == "O":
+    #         partida_continua = True
+    #         break
+    #     if i != "O":
+    #         partida_continua = False
+
+    # if partida_continua == False:
+    #     print("Has ganado!")

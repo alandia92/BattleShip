@@ -84,8 +84,8 @@ def disparar(tablero_ataque, tablero_enemigo, fila, columna):
         disparando = True
     else:
         # fallo, colocar un punto
-        tablero_enemigo[fila, columna] = "."
-        tablero_ataque[fila, columna] = "."
+        tablero_enemigo[fila, columna] = "_"
+        tablero_ataque[fila, columna] = "_"
         # cambiar al otro jugador
         disparando = False
         
