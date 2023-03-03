@@ -23,7 +23,7 @@ while disparando:
         es_maquina = True
 
     # realizar disparo al tablero del adversaio
-    # Tengo que gestionar tablero del adversaro de alguna manera
+    # Tengo que gestionar tablero del adversaro de alguna manera, igual no hace falta con la variabe es_maquina
     pum = disparar(tablero_adversario, fila, columna, es_maquina)
 
     # acertamos o no y se reduce las vidas
