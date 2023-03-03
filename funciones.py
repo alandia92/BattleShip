@@ -72,7 +72,7 @@ def colocar_barcos():
 
     return tablero
 
-tablero_barcos = colocar_barcos()
+tablero_barcos = colocar_barcos() # esta variabl externa nos sirve para trabajarla
 print(tablero_barcos)
 
 #DISPARAR
@@ -101,3 +101,4 @@ def disparar(tablero_adversario, fila, columna, es_maquina):
         disparando = False
         
     return  disparando
+

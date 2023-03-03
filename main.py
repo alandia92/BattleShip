@@ -7,7 +7,11 @@ from variables import*
 disparando = True
 jugador = 1
 vidas = 20
-# Con las vidas igual puedo hacer el cambio de turno
+# tablero jugador, tablero maquina
+# def jugar
+# mientras jugador dispara y acierta, que siga jugando si no acierta brak para que juegue la maquina
+# turnos con par e impar
+# Con las vidas igual puedo hacer el cambio de turno, igual tambien hasta que no queden "O", con tres while(tabero maquina,) while dispara(acierta vuelva si no break),otro?
 while disparando:
     if jugador == 1:
         fila = int(input("Elije fila entre 0-9: "))
