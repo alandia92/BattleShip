@@ -71,8 +71,6 @@ def colocar_barcos(tablero):
 
     return tablero
 
-tablero_barcos = colocar_barcos() # esta variabl externa nos sirve para trabajarla
-print(tablero_barcos)
 
 #DISPARAR
 # No se como gestionar tablero_adversario
@@ -83,7 +81,6 @@ def disparar(tablero_ataque, tablero_enemigo, fila, columna):
         # acierto, colocar una X
         tablero_ataque[fila, columna] = "X"
         tablero_enemigo[fila, columna] = "X"
-        # verificar si quedan barcos
         disparando = True
     else:
         # fallo, colocar un punto
