@@ -1,18 +1,13 @@
 import numpy as np
 
 
-#TABLERO
-# tamaño_tablero = 10
-# tablero = np.full((10,10), " ")
-
 def crear_tablero():
     tablero = np.full((10,10), " ")
     return tablero
 
-#COLOCAR BARCO
 def colocar_barcos(tablero):
     # longitud de los barcos
-    barcos = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1]
+    barcos = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1] 
 
     # bucle para colocar cada barco
     for longitud in barcos:
