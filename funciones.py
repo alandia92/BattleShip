@@ -75,8 +75,6 @@ def colocar_barcos(tablero):
     return tablero
 
 
-#DISPARAR
-# No se como gestionar tablero_adversario
 def dispararJugador(tablero_ataque, tablero_enemigo, fila, columna):
     if tablero_enemigo[fila, columna] == "X" or tablero_enemigo[fila, columna] == "_":
         print("Has disparado al mismo sitio, tonto!, vuelve a intentarlo!")
@@ -93,6 +91,7 @@ def dispararJugador(tablero_ataque, tablero_enemigo, fila, columna):
         tablero_ataque[fila, columna] = "_"
         # cambiar al otro jugador
         disparando = False
+        print("OOOH! Has fallado!")
     return  disparando
 
 def dispararMaquina(tablero_ataque, tablero_enemigo, fila, columna):
@@ -103,12 +102,12 @@ def dispararMaquina(tablero_ataque, tablero_enemigo, fila, columna):
         tablero_ataque[fila, columna] = "X"
         tablero_enemigo[fila, columna] = "X"
         disparando = False #ataca cuando es false
+        print("Te han dado!")
     if tablero_enemigo[fila, columna] == " ":
         # fallo, colocar una barra baja
         tablero_enemigo[fila, columna] = "_"
         tablero_ataque[fila, columna] = "_"
         # cambiar al otro jugador
         disparando = True
+        print("AGUA")
     return  disparando
-
-#para que funcione disparar meterlo en una variable para que esa variable tenga return disparando
